@@ -15,6 +15,7 @@ body {
     background: url('../imgs/fundogeral.jpg')   center fixed;
     background-size: cover;
     background-attachment: fixed;
+    display: flex;
     
 }
 main {
@@ -26,12 +27,13 @@ section#telefone {
     position: absolute;
     top: 55%;
     left: 50%;
-    transform: translate(-50%, -50%);
     
     height: 550px;
     width: 400px;
     background: url('../imgs/telefone.jpg');
     background-size: cover;
+    transform: translate(-50%, -50%);
+    flex: auto;
 }
 
 iframe#tela {
