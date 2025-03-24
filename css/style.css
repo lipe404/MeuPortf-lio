@@ -1,61 +1,84 @@
 @charset "UTF-8";
 
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 html, body {
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
 }
 
 body {
-    background: url('../imgs/fundogeral.jpg')   center fixed;
+    background: url('../imgs/fundogeral.jpg') center fixed;
     background-size: cover;
-    background-attachment: fixed;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 main {
-    position: relative;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
 }
 
 section#telefone {
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    
-    height: 550px;
-    width: 400px;
-    background: url('../imgs/telefone.jpg');
+    height: 55vh; /* Ajuste a altura para ser responsiva */
+    width: 80%; /* Ajuste a largura para ser responsiva */
+    max-width: 400px; /* Limite máximo */
+    background: url('../imgs/telefone.jpg') no-repeat center center;
     background-size: cover;
-    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Espaço entre seções */
 }
 
 iframe#tela {
-    position: relative;
-    top: 55px;
-    left: 76px;
-    width: 320px;
-    height: 410px;
+    width: 100%; /* Ajuste a largura para ser responsiva */
+    height: 60%; /* Ajuste a altura para ser responsiva */
 }
+
 section#redes-sociais {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que os ícones se movam para a linha seguinte se não houver espaço */
 }
-section#redes-sociais img{
+
+section#redes-sociais img {
     width: 50px;
     height: 50px;
     margin: 10px;
     border-radius: 20%;
     box-shadow: 2px 2px 5px rgba(19, 18, 18, 0.432);
-    box-sizing: border-box;
+    transition: transform 0.3s, border 0.3s;
 }
+
 section#redes-sociais img:hover {
     border: 2px solid rgba(255, 255, 255, 0.281);
-    flex: auto;
     box-shadow: 5px 5px 10px rgba(19, 18, 18, 0.603);
-    transition: transform 0.3s, border 1s;
     transform: translate(-3px, -3px);
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    section#telefone {
+        width: 90%; /* Aumenta a largura em telas menores */
+    }
+
+    iframe#tela {
+        height: 50%; /* Ajusta a altura do iframe */
+    }
+
+    section#redes-sociais img {
+        width: 40px; /* Reduz o tamanho dos ícones em telas menores */
+        height: 40px;
+    }
 }
